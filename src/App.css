@@ -156,6 +156,7 @@ img{
 }
 .nav__link:hover{
     color: var(--first-color);
+    transition: .3s;
 }
 .nav__logo{
     color: var(--white-color);
@@ -214,7 +215,7 @@ img{
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 295px;
+    width: auto;
 }
 
 /* ===== ABOUT =====*/
@@ -255,6 +256,30 @@ img{
 }
 .about__social-icon:hover{
     color: var(--first-color);
+}
+
+.riwayat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+.table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+  th, td{
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+  tr:hover{
+    background-color: lightgreen;
 }
 
 /* ===== SKILLS =====*/
@@ -399,6 +424,9 @@ img{
     color: var(--white-color);
     margin-bottom: var(--mb-2);
 }
+.footer__text{
+    text-align: justify;
+}
 .footer__link{
     padding: .25rem 0;
 }
@@ -533,3 +561,53 @@ img{
         right: 24%;
     }
 }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal__content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .modal p {
+    margin-bottom: 15px;
+  }
+  
+  .modal button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Animation for the Modal */
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .modal__content {
+    animation: modalFadeIn 0.3s ease-in-out;
+  }
+  

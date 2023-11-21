@@ -1,6 +1,15 @@
+import React from 'react';
+import { useSpring, animated } from 'react-spring';
+
 const Skills=()=>{
+    const fadeIn = useSpring({
+        from: { opacity: 0},
+        to: { opacity: 1},
+        config: { duration: 1500 },
+    });
+
     return(
-        <section class="skills section" id="skills">
+        <animated.section style={fadeIn} class="skills section" id="skills">
             <h2 class="section-title">Skills</h2>
 
             <div class="skills__container bd-grid">
@@ -27,7 +36,7 @@ const Skills=()=>{
                     <img src="./assets/img/skill.jpg" alt=""></img>
                 </div>
             </div>
-        </section>
+        </animated.section>
     );
 }
 

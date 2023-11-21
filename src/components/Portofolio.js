@@ -1,6 +1,15 @@
+import React from 'react';
+import { useSpring, animated } from 'react-spring';
+
 const Portofolio=()=>{
+    const fadeIn = useSpring({
+        from: { opacity: 0},
+        to: { opacity: 1},
+        config: { duration: 1500 },
+    });
+    
     return(
-        <section class="portfolio section" id="portfolio">
+        <animated.section style={fadeIn} class="portfolio section" id="portfolio">
             <h2 class="section-title">Portofolio</h2>
 
             <div class="portfolio__container bd-grid">
@@ -47,7 +56,7 @@ const Portofolio=()=>{
                     </div>
                 </div>
             </div>
-        </section>
+        </animated.section>
     );
 }
 

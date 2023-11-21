@@ -6,7 +6,7 @@ const Footer=()=>{
             <div class="footer__container bd-grid">
                 <div class="footer__data">
                     <h2 class="footer__title">JIDAN AM</h2>
-                    <p class="footer__text">I'm Jidan Ainul Mutaqin and this is my personal website</p>
+                    <p class="footer__text">Ini merupakan website profil sederhana React-JS ditujukan untuk tugas UTS Pemrograman Internet</p>
                 </div>
 
                 <div class="footer__data">

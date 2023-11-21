@@ -1,14 +1,28 @@
-// import './App.css';
+import React from 'react';
+import { useSpring, animated } from 'react-spring';
 
 const About=()=>{
+    const fadeIn = useSpring({
+        from: { opacity: 0},
+        to: { opacity: 1},
+        config: { duration: 1500 },
+    });
+
+    const bounceIn = useSpring({
+        from: { transform: 'translate3d(0, -30px, 0)', opacity: 1 },
+        to: { transform: 'translate3d(0, 0, 0)', opacity: 1 },
+        config: { tension: 400, friction: 10, delay: 200 },
+        loop: true,
+    });
+
     return(
-        <section class="about section" id="about">
+        <animated.section style={fadeIn} class="about section" id="about">
             <h2 class="section-title">About Me</h2>
 
             <div class="about__container bd-grid">
-                <div class="about__img">
+                <animated.div style={bounceIn} class="about__img">
                     <img src="./assets/img/about.jpg" alt=""></img>
-                </div>
+                </animated.div>
 
                 <div>
                     <h2 class="about__subtitle">I'am Jidan Ainul Mutaqin</h2>
@@ -22,7 +36,43 @@ const About=()=>{
                     </div>
                 </div>
             </div>
-        </section>
+
+            <h2 class="section-title">Riwayat Pendidikan</h2>
+            <div class="riwayat bd-grid">
+                <table class="tabel">
+                    <tr>
+                        <th>Tingkat</th>
+                        <th>Sekolah</th>
+                        <th>Keterangan</th>
+                    </tr>
+                    <tr>
+                        <td>TK</td>
+                        <td>TK Islam Al-Azhar 18 Cianjur</td>
+                        <td>LULUS</td>
+                    </tr>
+                    <tr>
+                        <td>SD</td>
+                        <td>SD Islam Al-Azhar 18 Cianjur</td>
+                        <td>LULUS</td>
+                    </tr>
+                    <tr>
+                        <td>SMP</td>
+                        <td>SMPN 2 Ciamis</td>
+                        <td>LULUS</td>
+                    </tr>
+                    <tr>
+                        <td>SMK</td>
+                        <td>SMKN 1 Cianjur</td>
+                        <td>LULUS</td>
+                    </tr>
+                    <tr>
+                        <td>S1</td>
+                        <td>Universitas Pendidikan Indonesia</td>
+                        <td>ON PROGRES</td>
+                    </tr>
+                </table>
+            </div>
+        </animated.section>
     );
 }
 
