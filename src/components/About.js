@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSpring, animated } from 'react-spring';
+import { useHover } from 'react-use-gesture';
 
 const About=()=>{
+    const [isHovered, setIsHovered] = useState(false);
+
     const fadeIn = useSpring({
         from: { opacity: 0},
         to: { opacity: 1},
@@ -15,12 +18,21 @@ const About=()=>{
         loop: true,
     });
 
+    const bind = useHover(({ hovering }) => {
+        setIsHovered(hovering);
+    });
+
+    useEffect(() => {
+        // You can add more logic here if needed when the hover state changes
+        // For now, it simply sets the hover state to true or false.
+    }, [isHovered]);
+
     return(
         <animated.section style={fadeIn} class="about section" id="about">
             <h2 class="section-title">About Me</h2>
 
             <div class="about__container bd-grid">
-                <animated.div style={bounceIn} class="about__img">
+                <animated.div  style={isHovered ? bounceIn : { transform: 'translate3d(0, 0, 0)', opacity: 1 }} class="about__img" {...bind()}>
                     <img src="./assets/img/about.jpg" alt=""></img>
                 </animated.div>
 
@@ -72,6 +84,38 @@ const About=()=>{
                     </tr>
                 </table>
             </div>
+
+            <h2 class="section-title">Hobby</h2>
+            <div class="container-hobby">
+                <div class="card__container">
+                    <article class="card__article">
+                        <img src="./assets/img/hobby1.png" alt="image" class="card__img"></img>
+
+                        <div class="card__data">
+                            <span class="card__description">Taman Nasional Gunung Gede Pangrango, Cianjur</span>
+                            <h2 class="card__title">Berpetualang</h2>
+                        </div>
+                    </article>
+
+                    <article class="card__article">
+                        <img src="./assets/img/hobby2.png" alt="image" class="card__img"></img>
+
+                        <div class="card__data">
+                            <span class="card__description">Tempat Billiard, Cianjur</span>
+                            <h2 class="card__title">Billiard</h2>
+                        </div>
+                    </article>
+
+                    <article class="card__article">
+                        <img src="./assets/img/hobby3.png" alt="image" class="card__img"></img>
+
+                        <div class="card__data">
+                            <span class="card__description">Gor Badminton, Cianjur</span>
+                            <h2 class="card__title">Badminton</h2>
+                        </div>
+                    </article>
+                </div>
+        </div>
         </animated.section>
     );
 }

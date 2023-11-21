@@ -13,7 +13,7 @@ const header=()=>{
                         <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
                         <li class="nav__item"><a href="/about" class="nav__link">About</a></li>
                         <li class="nav__item"><a href="/skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="/portofolio" class="nav__link">Portfolio</a></li>
+                        <li class="nav__item"><a href="/portofolio" class="nav__link">Portofolio</a></li>
                         <li class="nav__item"><a href="/contact" class="nav__link">Contact</a></li>
                     </ul>
                 </div>

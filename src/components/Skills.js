@@ -30,6 +30,7 @@ const Skills=()=>{
                     <h3 class="skills__subtitle">Soft Skills</h3>
                     <span class="skills__name">Communication</span>
                     <span class="skills__name">Leadership</span>
+                    <span class="skills__name">Ramah</span>
                 </div>
 
                 <div class="skills__img">
